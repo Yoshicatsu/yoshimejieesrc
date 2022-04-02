@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Main-Class: com.group_finity.mascot.Main
+Class-Path: examples.jar AbsoluteLayout.jar jna.jar nimrodlf.jar FixPngI
+ mage.jar
+

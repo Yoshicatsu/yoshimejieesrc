@@ -1,0 +1,57 @@
+Import into Intellij
+Resolve problems with red lines by importing Java 1.8 SDK (download if needed)
+Resolve yet more problems by adding to the build path FixPngImage.jar, it was missing. To do that, go into File -> Project Structure -> Problems -> fix.
+
+All red lines should be resolved now. At least it's recognizing all of the code.
+But running it directly from the IDE still won't work. Needs to be built as jar, with all the correct paths.
+
+To do that, again go to File -> Project Structure.
+Now click on Artifacts. Add a new one, on the plus "+" button. It will open a menu.
+Add -> JAR -> Empty. A new, empty artifact will be added, called "unnamed". Let's call it shimeji. The type is JAR.
+Output directory may be the same one as default, which will be something like C:\your_project_path\shimejieesrc\out
+
+You can checkmark that "Include in project build" option so that Intellij will automatically build this shimeji.jar every time you build the project.
+On the lower window, it will show "shimeji.jar". But once you click on it, it will say "META-INF/MANIFEST.MF file not found in 'unnamed.jar'.
+Oh no. This means that it will fail. Once it builds, your shimeji.jar will have no idea where to look for the required class paths.
+Thankfully, you can import a manifest file provided with all the paths you need. Click on Use Existing Manifest. Find MANIFEST.MF on the folder provided. Use that, double click on it or select it and click OK.
+
+We're almost there, but not done yet. You also must not forget use to all the available elements on the right of the screen. Select all of them and add to the shimeji.jar
+They will show on the list, right under shimeji.jar and META-INF.
+
+It's important that the shimeji.jar has this structure, check it on the window that it looks like this:
+
+shimeji.jar
+	>META-INF
+		MANIFEST.MF
+	'shimejieesrc' compile output
+	AbsoluteLayout.jar
+	examples.jar
+	FixPngImage.jar
+	jna.jar
+	nimrodlf.jar
+
+this is currently working on the present source code.
+
+If ['shimejieesrc' compile output] is not showing as Available Elements on the right side, the project is not building using the correct source folders.
+
+Go to Project Settings -> Modules, look at the structure of your project.
+On the Sources tab, it may not have imported correctly  the src folders.
+
+The content root must be on your project folder's path. For instance, C:\your_project_path\shimejieesrc.
+Right under it, it must show the Source Folders.
+if Source Folders: src, src_generic, src_mac and src_win are not shown, your project will not build correctly.
+
+Add them manually, or select all of their folders through shift clicking on those 4 folders and selecting "Mark as: Sources".
+
+After they have been marked as Source Folders, their icon will turn into another color that marks them as Source Folders (in standard intellij theme: blue).
+
+Now, go back to that Project Settings -> Artifacts screen.
+Your option ['shimejieesrc' compile output] should be listed on the Available Elements on the right.
+Add it to the shimeji.jar output, and it's done.
+
+Great, you're good to go!
+
+Build that, by clicking on the hammer icon on the top right of the screen (default: Ctrl+F9). 
+Wait for the project to finish building. And once you go to the output folder, your shimeji.jar file will be there.
+Cut and paste it into the main project folder, on C:\your_project_path\shimejieesrc, right where it can find the img and conf files and such.
+Execute the jar, shimeji will now work!
