@@ -30,8 +30,13 @@ Credits
 - LavenderSnek
   - A Pillar of the Community on Kilkakon's discord. Made plenty of contributions such as adding a way to replace the current set of active imageSets without modifying valid imageSets that are already active.
   - Also the one who helped me get the project set up the right way, as I couldn't even contribute to anything before seeing as just looking at the source code isn't enough for correctly running shimeji. I would've taken many hours of frustrating trial and error until it was done right if not for his tips.
-  - I'm also shamelessly copying much of his description and Licenses on GitHub because it's already well documented and I'm simply not good at this kind of stuff.
+  - I'm also shamelessly copying much of his description from the readme and license on GitHub because it's already well documented and I'm simply not good at this kind of stuff.
   - [GitHub page](https://github.com/LavenderSnek)
+
+- Cachomon
+  - Supporter on Kilkakon's discord. Made plenty of good shimejis, including the Tamamo Shimeji, which I'm currently using as my default image set because it's great and very cute.
+  - [Website](http://cachomon.com)
+  - [DeviantArt page](https://www.deviantart.com/cachomon)
 
 - nonowarn
   - Wrote the initial swing + jna mac implementation
