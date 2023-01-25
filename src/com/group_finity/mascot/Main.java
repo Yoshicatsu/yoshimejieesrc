@@ -13,7 +13,6 @@ import com.nilo.plaf.nimrod.NimRODLookAndFeel;
 import com.nilo.plaf.nimrod.NimRODTheme;
 import com.yoshimeji.responses.ResponseController;
 import org.w3c.dom.Document;
-import org.w3c.dom.NodeList;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -72,7 +71,7 @@ public class Main
 
     //initializes necessary properties
     private final Manager manager = new Manager( );
-    private ArrayList<String> imageSets = new ArrayList<String>( );
+    private ArrayList<String> imageSets = new ArrayList<>();
     private Hashtable<String, Configuration> configurations = new Hashtable<String, Configuration>( );
     private Hashtable<String, ArrayList<String>> childImageSets = new Hashtable<String, ArrayList<String>>( );
     private static Main instance = new Main( );
@@ -1346,26 +1345,7 @@ public class Main
                             {
                                 String response = inputUserMessage("What do you want to talk about?");
 
-                                shimejiResponse(ResponseController.prompt(response));
-
-
-//                                if (response.equalsIgnoreCase("hello")){
-//                                    shimejiResponse("Yo!");
-//
-//                                    //TODO: import response list from xml
-//                                    for(int i=0; i< responseList.getLength(); i++){
-//                                        Node node = responseList.item(i);
-//                                        shimejiResponse(node.getNodeName());
-//                                        shimejiResponse(node.getAttributes().getNamedItem("Name").toString());
-//                                        if (node.getNodeType() == Node.ELEMENT_NODE){
-//                                            Element eElement = (Element) node;
-//                                            shimejiResponse(eElement.toString());
-//                                            shimejiResponse(eElement.getAttribute("Name"));
-//                                            shimejiResponse(eElement.getTextContent());
-//                                            shimejiResponse(eElement.getElementsByTagName("Name").item(0).getTextContent());
-//                                        }
-//                                    }
-//                                }
+                                shimejiResponse(responseController.prompt(response));
                             }
                         });
 
