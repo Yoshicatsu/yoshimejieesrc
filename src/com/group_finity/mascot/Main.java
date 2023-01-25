@@ -11,9 +11,8 @@ import com.group_finity.mascot.win.WindowsInteractiveWindowForm;
 import com.joconner.i18n.Utf8ResourceBundleControl;
 import com.nilo.plaf.nimrod.NimRODLookAndFeel;
 import com.nilo.plaf.nimrod.NimRODTheme;
+import com.yoshimeji.responses.ResponseController;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import javax.imageio.ImageIO;
@@ -83,8 +82,7 @@ public class Main
     
     private JDialog form;
 
-    private static Document responses;
-    private static NodeList responseList;
+    private static ResponseController responseController = new ResponseController();
     
     public static Main getInstance( )
     {
@@ -124,10 +122,6 @@ public class Main
                     + "img/unused folder and try again." );
             System.exit( 0 );
         }
-    }
-
-    public static void setResponseList(NodeList responseList) {
-        Main.responseList = responseList;
     }
 
     //
@@ -403,22 +397,6 @@ public class Main
                         new FileInputStream( new File( behaviorsFile ) ) );
 
                 configuration.load( new Entry( behaviors.getDocumentElement() ), imageSet );
-            }
-            //load responses.xml file
-            {
-                filePath = "./conf/";
-                String responsesFile = filePath + "responses.xml";
-                log.log( Level.INFO, imageSet + " Read Responses File ({0})", responsesFile );
-
-                 final Document responses = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(
-                        new FileInputStream(new File(responsesFile)));
-
-                responses.getDocumentElement().normalize();
-
-                 Main.responses = responses;
-                NodeList responseList = responses.getElementsByTagName("ResponsesList");
-                setResponseList(responseList);
-                configuration.load( new Entry( responses.getDocumentElement() ), imageSet );
             }
 
             //validates configuration
@@ -1368,23 +1346,26 @@ public class Main
                             {
                                 String response = inputUserMessage("What do you want to talk about?");
 
-                                if (response.equalsIgnoreCase("hello")){
-                                    shimejiResponse("Hey there!");
+                                shimejiResponse(ResponseController.prompt(response));
 
-                                    //TODO: import response list from xml
-                                    for(int i=0; i< responseList.getLength(); i++){
-                                        Node node = responseList.item(i);
-                                        shimejiResponse(node.getNodeName());
-                                        shimejiResponse(node.getAttributes().getNamedItem("Name").toString());
-                                        if (node.getNodeType() == Node.ELEMENT_NODE){
-                                            Element eElement = (Element) node;
-                                            shimejiResponse(eElement.toString());
-                                            shimejiResponse(eElement.getAttribute("Name"));
-                                            shimejiResponse(eElement.getTextContent());
-                                            shimejiResponse(eElement.getElementsByTagName("Name").item(0).getTextContent());
-                                        }
-                                    }
-                                }
+
+//                                if (response.equalsIgnoreCase("hello")){
+//                                    shimejiResponse("Yo!");
+//
+//                                    //TODO: import response list from xml
+//                                    for(int i=0; i< responseList.getLength(); i++){
+//                                        Node node = responseList.item(i);
+//                                        shimejiResponse(node.getNodeName());
+//                                        shimejiResponse(node.getAttributes().getNamedItem("Name").toString());
+//                                        if (node.getNodeType() == Node.ELEMENT_NODE){
+//                                            Element eElement = (Element) node;
+//                                            shimejiResponse(eElement.toString());
+//                                            shimejiResponse(eElement.getAttribute("Name"));
+//                                            shimejiResponse(eElement.getTextContent());
+//                                            shimejiResponse(eElement.getElementsByTagName("Name").item(0).getTextContent());
+//                                        }
+//                                    }
+//                                }
                             }
                         });
 

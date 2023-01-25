@@ -1,14 +1,9 @@
-02/04/2022 12:06:56 INFORMA합ES: com.group_finity.mascot.config.BehaviorBuilder <init> Behaviors have finished loading(Behavior(WalkAndThrowIEFromLeft,20,WalkAndThrowIEFromLeft))
-02/04/2022 12:06:56 INFORMA합ES: com.group_finity.mascot.config.Configuration load Behavior List
-02/04/2022 12:06:56 INFORMA합ES: com.group_finity.mascot.Main loadConfiguration Shimeji Read Responses File (./conf/responses.xml)
-02/04/2022 12:06:56 INFORMA합ES: com.group_finity.mascot.config.Configuration load Start Reading Configuration File...
-02/04/2022 12:06:56 INFORMA합ES: com.group_finity.mascot.config.Configuration load Behavior List
-02/04/2022 12:06:56 INFORMA합ES: com.group_finity.mascot.Main createTrayIcon create a tray icon
-02/04/2022 12:06:56 INFORMA합ES: com.group_finity.mascot.Main createMascot create a mascot
-02/04/2022 12:06:56 INFORMA합ES: com.group_finity.mascot.Mascot <init> Created a mascot (mascot1)
-02/04/2022 12:06:57 INFORMA합ES: com.group_finity.mascot.behavior.UserBehavior init Default Behavior(mascot1,Behavior(Fall))
-02/04/2022 12:07:03 INFORMA합ES: com.group_finity.mascot.behavior.UserBehavior next Completed Behavior (mascot1,Behavior(Fall))
-02/04/2022 12:07:03 INFORMA합ES: com.group_finity.mascot.behavior.UserBehavior init Default Behavior(mascot1,Behavior(WalkAlongIECeiling))
-02/04/2022 12:07:09 INFORMA합ES: com.group_finity.mascot.behavior.UserBehavior init Default Behavior(mascot1,Behavior(Dragged))
-02/04/2022 12:07:09 INFORMA합ES: com.group_finity.mascot.behavior.UserBehavior init Default Behavior(mascot1,Behavior(Thrown))
-02/04/2022 12:07:45 INFORMA합ES: com.group_finity.mascot.Mascot dispose destroy mascot (mascot1)
+25/01/2023 19:47:16 INFORMA합ES: com.group_finity.mascot.config.BehaviorBuilder <init> Start Reading(Behavior(WalkAndThrowIEFromLeft,20,WalkAndThrowIEFromLeft))
+25/01/2023 19:47:16 INFORMA합ES: com.group_finity.mascot.config.BehaviorBuilder <init> Behaviors have finished loading(Behavior(WalkAndThrowIEFromLeft,20,WalkAndThrowIEFromLeft))
+25/01/2023 19:47:16 INFORMA합ES: com.group_finity.mascot.config.Configuration load Behavior List
+25/01/2023 19:47:16 INFORMA합ES: com.group_finity.mascot.Main createTrayIcon create a tray icon
+25/01/2023 19:47:16 INFORMA합ES: com.group_finity.mascot.Main createMascot create a mascot
+25/01/2023 19:47:16 INFORMA합ES: com.group_finity.mascot.Mascot <init> Created a mascot (mascot1)
+25/01/2023 19:47:17 INFORMA합ES: com.group_finity.mascot.behavior.UserBehavior init Default Behavior(mascot1,Behavior(Fall))
+25/01/2023 19:47:26 INFORMA합ES: com.group_finity.mascot.behavior.UserBehavior next Completed Behavior (mascot1,Behavior(Fall))
+25/01/2023 19:47:26 INFORMA합ES: com.group_finity.mascot.behavior.UserBehavior init Default Behavior(mascot1,Behavior(SitDown))
